@@ -23,7 +23,7 @@ const Resturent = () => {
         <Col sm={6}>
           <h1>Stay in {category}</h1>
           {products.map((rst) => (
-            <Hotel item={rst}></Hotel>
+            <Hotel item={rst} key={rst.key}></Hotel>
           ))}
         </Col>
         <Col sm={6}>

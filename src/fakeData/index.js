@@ -1,8 +1,8 @@
 import coxsbazzer from "./coxsbazzer";
 import sundorbon from "./sundorbon";
-import sreemongol from "./sreemongol";
+import sreemangal from "./sreemangal";
 
-const fakeData = [...coxsbazzer, ...sundorbon, ...sreemongol];
+const fakeData = [...coxsbazzer, ...sundorbon, ...sreemangal];
 
 const shuffle = (a) => {
   for (let i = a.length; i; i--) {

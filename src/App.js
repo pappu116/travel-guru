@@ -12,11 +12,12 @@ import Login from "./Component/Login/Login";
 import NotFound from "./Component/NotFound/NotFound";
 import Booking from "./Component/Booking/Booking";
 import Resturent from "./Component/Resturent/Resturent";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 export const CategoryContext = createContext();
 export const UserContext = createContext();
 function App() {
   const [category, setCategory] = useState("cox'sbazzer");
-  const [loggedInUser, setLoggedInUser] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <div className="app-area">
       <CategoryContext.Provider value={[category, setCategory]}>
@@ -39,9 +40,9 @@ function App() {
               <Route path="/destination">
                 <Destination></Destination>
               </Route>
-              <Route path="/resturent">
+              <PrivateRoute path="/resturent">
                 <Resturent></Resturent>
-              </Route>
+              </PrivateRoute>
               <Route path="/news">
                 <News></News>
               </Route>

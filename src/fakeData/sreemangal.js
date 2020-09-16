@@ -1,7 +1,7 @@
-var sreemongol = [
+var sreemangal = [
   {
     key: "B002RL8IYK",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Elite Camp Resort",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -12,7 +12,7 @@ var sreemongol = [
   },
   {
     key: "B01LZ2WZGH",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Private House Hotel",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -23,7 +23,7 @@ var sreemongol = [
   },
   {
     key: "B01K1IO3QW",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Secluded Tropic Hotel",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -34,7 +34,7 @@ var sreemongol = [
   },
   {
     key: "B01LD4MGY4",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Queen's Vertex Resort",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -45,7 +45,7 @@ var sreemongol = [
   },
   {
     key: "B01M18UZF5",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Royal Jewel Hotel",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -56,7 +56,7 @@ var sreemongol = [
   },
   {
     key: "B01DBGVB7K",
-    category: "sreemongol",
+    category: "sreemangal",
     name: "Crown Prairie Motel",
     title: "Cancellation fexibility availiable",
     about: "4 guests 2bedrooms 2beds 2 baths  Wif Air conditioning Kitchen",
@@ -67,4 +67,4 @@ var sreemongol = [
   },
 ];
 
-export default sreemongol;
+export default sreemangal;

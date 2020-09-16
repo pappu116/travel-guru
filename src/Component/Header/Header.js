@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import Logo from "../../Logo.png";
-import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  FormControl,
+  Nav,
+  Navbar,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const Header = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <>
+    <Container>
       <Navbar variant="light" className="navbar-area">
         <Navbar.Brand href="#home">
           <img src={Logo} alt="" style={{ height: "50px" }} />
@@ -31,13 +40,16 @@ const Header = () => {
           <Nav.Link className="text-dark">
             <Link to="/contact">Contact</Link>
           </Nav.Link>
-
           <Link to="/login">
-            <Button variant="warning">Login</Button>
+            {loggedInUser.email ? (
+              <Button variant="dark">{loggedInUser.email}</Button>
+            ) : (
+              <Button variant="warning">Login</Button>
+            )}
           </Link>
         </Nav>
       </Navbar>
-    </>
+    </Container>
   );
 };
 

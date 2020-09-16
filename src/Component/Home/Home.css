@@ -25,14 +25,13 @@
 }
 .overlay {
   position: absolute;
-  bottom: 0;
+  bottom: 131px;
   color: #f1f1f1;
   width: 100%;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   font-family: Bebas Neue;
-  padding: 20px;
-  padding-bottom: 30px;
+  padding: 20px 20px 30px;
 }
 .item-area {
   display: flex;

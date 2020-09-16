@@ -13,7 +13,7 @@ const Home = () => {
   const [category, setCategory] = useContext(CategoryContext);
 
   return (
-    <Container className="item">
+    <Container className="item mt-5">
       <Row>
         <Col sm={4} className="item-text">
           <h1>{category}</h1>
