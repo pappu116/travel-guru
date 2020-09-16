@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.item {
+  display: flex;
+}
+.item-text {
+  width: 15%;
+  padding: 80px;
+  color: #fff;
+  line-height: 2em;
+  font-family: Bebas Neue;
+}
+.item-text h1 {
+  text-transform: uppercase;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  color: #f1f1f1;
+  width: 100%;
+  text-transform: uppercase;
+  color: white;
+  font-family: Bebas Neue;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+.item-area {
+  display: flex;
+}
+.item-area div {
+  margin: 10px;
+}
+.img1 {
+  width: 270px;
+  height: 416px;
+  left: 635px;
+  top: 236px;
+  background: linear-gradient(0.12deg, #000000 0.1%, rgba(0, 0, 0, 0) 69.96%);
+  border-radius: 20px;
+}
+.img2 {
+  width: 270px;
+  height: 416px;
+  left: 935px;
+  top: 236px;
+  background: linear-gradient(0.12deg, #000000 0.1%, rgba(0, 0, 0, 0) 69.96%);
+  border-radius: 20px;
+}
+.img3 {
+  width: 270px;
+  height: 416px;
+  left: 1235px;
+  top: 236px;
+
+  background: linear-gradient(0.12deg, #000000 0.1%, rgba(0, 0, 0, 0) 69.96%);
+  border-radius: 20px;
+}

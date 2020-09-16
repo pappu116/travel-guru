@@ -1,24 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { createContext, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./Component/Header/Header";
+import Home from "./Component/Home/Home";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Blog from "./Component/Blog/Blog";
+import Contact from "./Component/Contact/Contact";
+import Destination from "./Component/Destination/Destination.js";
+import News from "./Component/News/News";
+import Login from "./Component/Login/Login";
+import NotFound from "./Component/NotFound/NotFound";
+import Booking from "./Component/Booking/Booking";
+import Resturent from "./Component/Resturent/Resturent";
+export const CategoryContext = createContext();
+export const UserContext = createContext();
 function App() {
+  const [category, setCategory] = useState("cox'sbazzer");
+  const [loggedInUser, setLoggedInUser] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-area">
+      <CategoryContext.Provider value={[category, setCategory]}>
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+          <Router>
+            <Header></Header>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="/blog">
+                <Blog></Blog>
+              </Route>
+              <Route path="/contact">
+                <Contact></Contact>
+              </Route>
+              <Route path="/booking">
+                <Booking></Booking>
+              </Route>
+              <Route path="/destination">
+                <Destination></Destination>
+              </Route>
+              <Route path="/resturent">
+                <Resturent></Resturent>
+              </Route>
+              <Route path="/news">
+                <News></News>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+              </Route>
+              <Route path="*">
+                <NotFound></NotFound>
+              </Route>
+            </Switch>
+          </Router>
+        </UserContext.Provider>
+      </CategoryContext.Provider>
     </div>
   );
 }

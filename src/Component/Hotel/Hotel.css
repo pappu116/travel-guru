@@ -1,0 +1,14 @@
+.bg-area {
+  background-color: #fff;
+}
+.item-row {
+  display: flex;
+  margin: 10px;
+}
+.item-row img {
+  height: 160px;
+  border-radius: 5px;
+}
+.title {
+  margin-left: 10px;
+}
