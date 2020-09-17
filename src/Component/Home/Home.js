@@ -34,7 +34,7 @@ const Home = () => {
         <img src="img_avatar.png" alt="Avatar" className="image">
           <h2 className="overlay">My Name is John</h2>
           </div> */}
-        <Col sm={8} className="item-area">
+        <Col md={8} className="item-area">
           <div className="img1" onClick={() => setCategory("cox'sbazzer")}>
             <img src={CoxBazer} alt="" className="image" />
             <h2 className="overlay">Cox's Bazer</h2>

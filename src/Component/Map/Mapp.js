@@ -16,12 +16,16 @@ function Map() {
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 const Mapp = () => {
+  const style = {
+    width: "45vw",
+    height: "180vh",
+  };
   return (
-    <div>
+    <div style={style}>
       <WrappedMap
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `1000px` }} />}
+        containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     </div>

@@ -1,10 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 .item {
   display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 .item-text {
   width: 15%;
@@ -24,7 +21,7 @@
 }
 .overlay {
   position: absolute;
-  bottom: 131px;
+  bottom: 100px;
   color: #f1f1f1;
   width: 100%;
   text-transform: uppercase;
@@ -42,7 +39,7 @@
   width: 270px;
   height: 416px;
   left: 635px;
-  top: 236px;
+  top: 400px;
   background: linear-gradient(0.12deg, #000000 0.1%, rgba(0, 0, 0, 0) 69.96%);
   border-radius: 20px;
 }
