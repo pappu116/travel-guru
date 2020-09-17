@@ -41,8 +41,10 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </Nav.Link>
           <Link to="/login">
-            {loggedInUser.email ? (
-              <Button variant="dark">{loggedInUser.email}</Button>
+            {loggedInUser.isSignedIn || loggedInUser.email ? (
+              <Button variant="dark">
+                {loggedInUser.email || loggedInUser.name}
+              </Button>
             ) : (
               <Button variant="warning">Login</Button>
             )}

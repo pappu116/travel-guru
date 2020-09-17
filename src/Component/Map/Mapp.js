@@ -18,7 +18,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 const Mapp = () => {
   const style = {
     width: "45vw",
-    height: "180vh",
+    height: "100vh",
   };
   return (
     <div style={style}>

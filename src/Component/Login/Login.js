@@ -49,22 +49,22 @@ const Login = () => {
   //*************************** */
   // handel sing out cores area
   //************************* */
-  const handelSignOut = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then((res) => {
-        const signOutUser = {
-          isSignedIn: false,
-          name: "",
-          email: "",
-          photo: "",
-        };
-        setUser(signOutUser);
-        setLoggedInUser(signOutUser);
-      })
-      .catch((err) => {});
-  };
+  // const handelSignOut = () => {
+  //   firebase
+  //     .auth()
+  //     .signOut()
+  //     .then((res) => {
+  //       const signOutUser = {
+  //         isSignedIn: false,
+  //         name: "",
+  //         email: "",
+  //         photo: "",
+  //       };
+  //       setUser(signOutUser);
+  //       setLoggedInUser(signOutUser);
+  //     })
+  //     .catch((err) => {});
+  // };
   const handelBlur = (e) => {
     console.log(e.target.name, e.target.value);
     //******************************** * /
@@ -157,22 +157,23 @@ const Login = () => {
     firebase
       .auth()
       .signInWithPopup(fbProvider)
-      .then(function (result) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
+      .then((res) => {
+        const { displayName, photoURL, email } = res.user;
+        const signedInUser = {
+          isSignedIn: true,
+          name: displayName,
+          email: email,
+          photo: photoURL,
+        };
+
+        // console.log(signedInUser);
+        setLoggedInUser(signedInUser);
+        history.replace(from);
+        // console.log(displayName, email, photoURL);
       })
-      .catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
+      .catch((err) => {
+        console.log(err);
+        console.log(err.message);
       });
   };
   //***************************//
