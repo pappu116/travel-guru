@@ -217,7 +217,7 @@ const Login = () => {
               </h4>
             )}
           </div>
-          <Form onClick={clickToFormSubmit}>
+          <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>
                 {newUser ? <h1>Sign Up</h1> : <h1>Login</h1>}
@@ -271,7 +271,13 @@ const Login = () => {
                 Forgot Password
               </span>
             </Form.Group>
-            <Button variant="primary" type="submit" size="lg" block>
+            <Button
+              variant="primary"
+              type="submit"
+              size="lg"
+              block
+              onClick={clickToFormSubmit}
+            >
               {newUser ? "SingUp" : "Login"}
             </Button>
             <br />
