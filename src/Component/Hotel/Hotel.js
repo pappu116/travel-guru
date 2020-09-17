@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Star from "../../Icon/star_1_.png";
-import GoogleMap from "../Googlemap/GoogleMap";
 import "./Hotel.css";
 const Hotel = (props) => {
   const { name, title, about, price, totalPrice, img, star } = props.item;

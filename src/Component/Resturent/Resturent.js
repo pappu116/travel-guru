@@ -3,8 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { CategoryContext } from "../../App";
 import fakeData from "../../fakeData";
-import GoogleMap from "../Googlemap/GoogleMap";
 import Hotel from "../Hotel/Hotel";
+import Mapp from "../Map/Mapp";
 
 const Resturent = () => {
   const [category, setCategory] = useContext(CategoryContext);
@@ -27,7 +27,7 @@ const Resturent = () => {
           ))}
         </Col>
         <Col sm={6}>
-          <GoogleMap></GoogleMap>
+          <Mapp></Mapp>
         </Col>
       </Row>
     </Container>

@@ -124,6 +124,7 @@ const Login = () => {
           newUserInfo.success = true;
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
+
           history.replace(from);
           console.log("sign in user info", res.user);
         })
