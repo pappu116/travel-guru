@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CategoryContext, BackgroundColorChng } from "../../App";
+import { CategoryContext } from "../../App";
 import Datepicker from "../Datepicker/Datepicker";
 import "./Booking.css";
 
 const Booking = () => {
   const [category, setCategory] = useContext(CategoryContext);
-  const bg = {
-    backgroundColor: "yellow",
-  };
   return (
     <Container>
       <Row className="booking">

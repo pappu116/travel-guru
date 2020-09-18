@@ -80,11 +80,6 @@ const Login = () => {
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isEpValid = passwordHasNumber && isPasswordValid;
     }
-    let pass = document.getElementsByName("password");
-    let confPass = document.getElementsByName("confarmPassword");
-    if (pass.value === confPass.value) {
-      console.log("beta ok ase");
-    }
 
     if (isEpValid) {
       //**************************//
