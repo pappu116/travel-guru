@@ -15,7 +15,6 @@ import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import { id } from "date-fns/esm/locale";
 export const CategoryContext = createContext();
 export const UserContext = createContext();
-export const BackgroundColorChng = createContext();
 function App() {
   const [category, setCategory] = useState("cox'sbazzer");
   const [loggedInUser, setLoggedInUser] = useState({});

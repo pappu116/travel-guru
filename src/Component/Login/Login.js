@@ -248,7 +248,7 @@ const Login = () => {
               type="email"
               name="email"
               onBlur={handelBlur}
-              placeholder="Your Email Address"
+              placeholder="Email Address"
               required
             />
             <br />
@@ -257,7 +257,7 @@ const Login = () => {
               name="password"
               onBlur={handelBlur}
               id=""
-              placeholder="Your Password"
+              placeholder=" Password"
               required
             />
             <br />
@@ -267,7 +267,7 @@ const Login = () => {
                 name="confarmPassword"
                 onBlur={handelBlur}
                 id=""
-                placeholder="Your Password"
+                placeholder="Confarm Password"
                 required
               />
             )}

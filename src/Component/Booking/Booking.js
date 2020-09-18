@@ -7,7 +7,6 @@ import "./Booking.css";
 
 const Booking = () => {
   const [category, setCategory] = useContext(CategoryContext);
-  const [background, setBackground] = useContext(BackgroundColorChng);
   const bg = {
     backgroundColor: "yellow",
   };
@@ -51,12 +50,7 @@ const Booking = () => {
               <Datepicker></Datepicker>
               <br />
               <Link to="/resturent">
-                <Button
-                  variant="warning"
-                  size="lg"
-                  onclick={() => setBackground(bg)}
-                  block
-                >
+                <Button variant="warning" size="lg" block>
                   Start Booking
                 </Button>
               </Link>
