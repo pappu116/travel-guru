@@ -80,20 +80,26 @@ const Login = () => {
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isEpValid = passwordHasNumber && isPasswordValid;
     }
+    let pass = document.getElementsByName("password");
+    let confPass = document.getElementsByName("confarmPassword");
+    if (pass.value === confPass.value) {
+      console.log("beta ok ase");
+    }
 
-    //**************************//
-    //password valid * /
-
-    //end code//
     if (isEpValid) {
+      //**************************//
+      //password valid * /
+
+      //end code//
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
       setUser(newUserInfo);
     }
   };
+
   //***************************
   // new user Create codes * /
-  const clickToFormSubmit = (e) => {
+  const handelSubmit = (e) => {
     if (newUser && user.email && user.password) {
       firebase
         .auth()
@@ -137,6 +143,7 @@ const Login = () => {
     }
     e.preventDefault();
   };
+
   //******************************** */
   //update user name area
   const updateUserName = (name) => {
@@ -193,9 +200,8 @@ const Login = () => {
 
   //************************
   //reset or forfot password  code* /
-  const forGotPassword = (email) => {
+  const ForgotPassword = (email) => {
     var auth = firebase.auth();
-    // var emailAddress = "user@example.com";
 
     auth
       .sendPasswordResetEmail(email)
@@ -209,7 +215,7 @@ const Login = () => {
   return (
     <Container>
       <Row>
-        <Col sm={6} className="logggedin-from offset-md-3">
+        <Col sm={6} className="logggedin-from from offset-md-3">
           <h4 style={{ color: "red" }}>{user.error}</h4>
           <div className="text-center">
             {user.success && (
@@ -218,71 +224,62 @@ const Login = () => {
               </h4>
             )}
           </div>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>
-                {newUser ? <h1>Sign Up</h1> : <h1>Login</h1>}
-              </Form.Label>
-              {newUser && (
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Your Name"
-                  onBlur={handelBlur}
-                  required
-                />
-              )}
-              <Form.Text className="text-muted"></Form.Text>
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              <Form.Control
+          {newUser ? <h1>Create An Account</h1> : <h1>Login</h1>}
+          <form onSubmit={handelSubmit}>
+            {newUser && (
+              <input
+                name="name"
                 type="text"
-                name="email"
-                placeholder="User Or Email"
                 onBlur={handelBlur}
-                required
+                placeholder="First Name"
               />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                onBlur={handelBlur}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              {newUser && (
-                <Form.Control
-                  type="password"
-                  name="re-Password"
-                  placeholder="Re-Password"
-                  onBlur={handelBlur}
-                  required
-                />
-              )}
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Remember Me" />
-              <span
-                className="text-warning fgotpass"
-                onClick={forGotPassword(user.email)}
-              >
-                Forgot Password
-              </span>
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              size="lg"
-              block
-              onClick={clickToFormSubmit}
-            >
-              {newUser ? "SingUp" : "Login"}
-            </Button>
+            )}
             <br />
-          </Form>
+            {newUser && (
+              <input
+                name="name"
+                type="text"
+                onBlur={handelBlur}
+                placeholder="Last Name"
+              />
+            )}
+            <br />
+            <input
+              type="email"
+              name="email"
+              onBlur={handelBlur}
+              placeholder="Your Email Address"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              onBlur={handelBlur}
+              id=""
+              placeholder="Your Password"
+              required
+            />
+            <br />
+            {newUser && (
+              <input
+                type="password"
+                name="confarmPassword"
+                onBlur={handelBlur}
+                id=""
+                placeholder="Your Password"
+                required
+              />
+            )}
+            <br />
+            <p className="fgotpass" onClick={ForgotPassword(user.email)}>
+              Forgot Password
+            </p>
+            <br />
+            <Button variant="warning" type="submit" size="lg" block>
+              {newUser ? "Sign Up" : "Sign In"}
+            </Button>
+          </form>
           <p className="text-center">
             {newUser ? "Already have an account?" : "Don't have an account?"}
             <span

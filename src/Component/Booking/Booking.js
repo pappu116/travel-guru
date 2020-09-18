@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CategoryContext } from "../../App";
+import { CategoryContext, BackgroundColorChng } from "../../App";
 import Datepicker from "../Datepicker/Datepicker";
 import "./Booking.css";
 
 const Booking = () => {
   const [category, setCategory] = useContext(CategoryContext);
+  const [background, setBackground] = useContext(BackgroundColorChng);
+  const bg = {
+    backgroundColor: "yellow",
+  };
   return (
     <Container>
       <Row className="booking">
@@ -47,7 +51,12 @@ const Booking = () => {
               <Datepicker></Datepicker>
               <br />
               <Link to="/resturent">
-                <Button variant="warning" size="lg" block>
+                <Button
+                  variant="warning"
+                  size="lg"
+                  onclick={() => setBackground(bg)}
+                  block
+                >
                   Start Booking
                 </Button>
               </Link>

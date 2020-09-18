@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home";
@@ -13,8 +12,10 @@ import NotFound from "./Component/NotFound/NotFound";
 import Booking from "./Component/Booking/Booking";
 import Resturent from "./Component/Resturent/Resturent";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import { id } from "date-fns/esm/locale";
 export const CategoryContext = createContext();
 export const UserContext = createContext();
+export const BackgroundColorChng = createContext();
 function App() {
   const [category, setCategory] = useState("cox'sbazzer");
   const [loggedInUser, setLoggedInUser] = useState({});
