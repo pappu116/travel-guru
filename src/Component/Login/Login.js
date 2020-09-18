@@ -194,7 +194,8 @@ const Login = () => {
   };
 
   //************************
-  //reset or forfot password  code* /
+  // reset or forfot password  code* /
+
   const ForgotPassword = (email) => {
     var auth = firebase.auth();
 
@@ -223,7 +224,7 @@ const Login = () => {
           <form onSubmit={handelSubmit}>
             {newUser && (
               <input
-                name="name"
+                name="firstname"
                 type="text"
                 onBlur={handelBlur}
                 placeholder="First Name"
@@ -232,7 +233,7 @@ const Login = () => {
             <br />
             {newUser && (
               <input
-                name="name"
+                name="lastname"
                 type="text"
                 onBlur={handelBlur}
                 placeholder="Last Name"
@@ -267,7 +268,7 @@ const Login = () => {
               />
             )}
             <br />
-            <p className="fgotpass" onClick={ForgotPassword(user.email)}>
+            <p className="fgotpass" onClick={() => ForgotPassword(user.email)}>
               Forgot Password
             </p>
             <br />
