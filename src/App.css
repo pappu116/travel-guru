@@ -1,9 +1,9 @@
 .app-area {
   background: url(../src/Image/Rectangle\ 1.png);
   background-color: #0c1202;
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   left: 0px;
   top: 0px;
 }

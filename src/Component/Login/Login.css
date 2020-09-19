@@ -11,9 +11,11 @@
 }
 .fgotpass {
   cursor: pointer;
+  position: absolute;
   color: #e0a800;
+  right: 20px;
 }
-.from input {
+.logggedin-from input {
   border: none;
   display: block;
   width: 100%;

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "./Login.css";
 import Fblogo from "../../Icon/fb.png";
 import Glogo from "../../Icon/google.png";
@@ -66,7 +66,7 @@ const Login = () => {
   //     .catch((err) => {});
   // };
   const handelBlur = (e) => {
-    console.log(e.target.name, e.target.value);
+    // console.log(e.target.name, e.target.value);
     //******************************** * /
     //Ep =email and password
     //email and password Check validation code
@@ -95,26 +95,32 @@ const Login = () => {
   //***************************
   // new user Create codes * /
   const handelSubmit = (e) => {
-    if (newUser && user.email && user.password) {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(user.email, user.password)
-        .then((res) => {
-          const newUserInfo = { ...user };
-          newUserInfo.error = "";
-          newUserInfo.success = true;
-          setUser(newUserInfo);
-          updateUserName(user.name);
-          history.replace(from);
-          verifyingEmail();
-        })
-        .catch((error) => {
-          const newUserInfo = { ...user };
-          newUserInfo.error = error.message;
-          newUserInfo.success = false;
-          setUser(newUserInfo);
-        });
+    if (newUser && e.target[3].value !== e.target[4].value) {
+      alert("Please Field Must Valid Password");
+    } else {
+      if (newUser && user.email && user.password) {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(user.email, user.password)
+          .then((res) => {
+            const newUserInfo = { ...user };
+            newUserInfo.error = "";
+            newUserInfo.success = true;
+            setUser(newUserInfo);
+            updateUserName(user.name);
+            history.replace(from);
+            verifyingEmail();
+          })
+          .catch((error) => {
+            const newUserInfo = { ...user };
+            newUserInfo.error = error.message;
+            newUserInfo.success = false;
+            setUser(newUserInfo);
+          });
+      }
     }
+    // console.log(e.target[3].value);
+
     if (!newUser && user.email && user.password) {
       firebase
         .auth()
@@ -211,7 +217,7 @@ const Login = () => {
   return (
     <Container>
       <Row>
-        <Col sm={6} className="logggedin-from from offset-md-3">
+        <Col sm={6} className="logggedin-from offset-md-3">
           <h4 style={{ color: "red" }}>{user.error}</h4>
           <div className="text-center">
             {user.success && (
@@ -268,9 +274,22 @@ const Login = () => {
               />
             )}
             <br />
-            <p className="fgotpass" onClick={() => ForgotPassword(user.email)}>
-              Forgot Password
-            </p>
+
+            <input
+              type="checkbox"
+              name="Remem"
+              style={{ width: "10px" }}
+              id=""
+            />
+            <label htmlFor="Remem">
+              Re-member
+              <span
+                className="fgotpass "
+                onClick={() => ForgotPassword(user.email)}
+              >
+                Forgot Password
+              </span>
+            </label>
             <br />
             <Button variant="warning" type="submit" size="lg" block>
               {newUser ? "Sign Up" : "Sign In"}
