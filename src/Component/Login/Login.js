@@ -215,7 +215,7 @@ const Login = () => {
       });
   };
   return (
-    <Container>
+    <Container className="art-from">
       <Row>
         <Col sm={6} className="logggedin-from offset-md-3">
           <h4 style={{ color: "red" }}>{user.error}</h4>

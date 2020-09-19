@@ -3,6 +3,9 @@
   width: 100%;
   height: 100%;
 }
+.art-from {
+  height: 100vh;
+}
 .border {
   border-bottom: 2px solid gray;
 }
