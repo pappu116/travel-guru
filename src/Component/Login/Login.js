@@ -226,7 +226,7 @@ const Login = () => {
               </h4>
             )}
           </div>
-          {newUser ? <h1>Create An Account</h1> : <h1>Login</h1>}
+          {newUser ? <h1>Create an account</h1> : <h1>Login</h1>}
           <form onSubmit={handelSubmit}>
             {newUser && (
               <input
@@ -275,21 +275,26 @@ const Login = () => {
             )}
             <br />
 
-            <input
-              type="checkbox"
-              name="Remem"
-              style={{ width: "10px" }}
-              id=""
-            />
-            <label htmlFor="Remem">
-              Re-member
-              <span
-                className="fgotpass "
-                onClick={() => ForgotPassword(user.email)}
-              >
-                Forgot Password
-              </span>
-            </label>
+            {!newUser && (
+              <input
+                type="checkbox"
+                name="Remem"
+                style={{ width: "10px" }}
+                id=""
+              />
+            )}
+
+            {!newUser && (
+              <label htmlFor="Remem">
+                Re-member
+                <span
+                  className="fgotpass "
+                  onClick={() => ForgotPassword(user.email)}
+                >
+                  Forgot Password
+                </span>
+              </label>
+            )}
             <br />
             <Button variant="warning" type="submit" size="lg" block>
               {newUser ? "Sign Up" : "Sign In"}
@@ -311,11 +316,12 @@ const Login = () => {
             variant="secondary"
             type="submit"
             size="lg"
+            style={{ borderRadius: "50px" }}
             block
             onClick={fbLogedIn}
           >
             <span>
-              <img style={{ height: "40px" }} src={Fblogo} alt="" />
+              <img style={{ height: "30px" }} src={Fblogo} alt="" />
             </span>
             <span className="ml-5">Continue With Facebook</span>
           </Button>
@@ -325,11 +331,12 @@ const Login = () => {
             variant="secondary"
             type="submit"
             size="lg"
+            style={{ borderRadius: "50px" }}
             block
             onClick={googleLogin}
           >
             <span>
-              <img style={{ height: "40px" }} src={Glogo} alt="" />
+              <img style={{ height: "30px" }} src={Glogo} alt="" />
             </span>
             <span className="ml-5">Continue With Google</span>
           </Button>
